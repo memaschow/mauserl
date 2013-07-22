@@ -3,14 +3,25 @@
 <a id="bgndVideo" href="http://www.youtube.com/watch?v=u2pySXCmwpc" class="movie {opacity:1, isBgndMovie:{width:'1280',mute:false}, ratio:'16/9',quality:'default', showControls:false}">Kina Grannis</a>
 
 </div>
-<div class="dida"><strong>Alles gute zum Geburtstag, Mausi!</strong> So viele schöne Stunden mit dir--> <div id="timer">
+<div class="dida"><strong>Alles gute zum Geburtstag Mausi! </br> So viele schöne Stunden läuft die Weihnachtsgeschichte schon her ... <div id="timer">
+	</strong>
 
-  <div class="dido">Video: <a href="http://www.youtube.com/watch?v=u2pySXCmwpc">Kina Grannis</a> <a href="http://4hourventure.com/imprint/" rel="nofollow">Imprint</a> <input type="text" id="txt" /></div></div>
+  <div class="dido">Video: <a href="http://www.youtube.com/watch?v=u2pySXCmwpc">Kina Grannis</a> <a href="http://4hourventure.com/imprint/" rel="nofollow">Imprint</a> </div></div>
 
 <script>
-  var start = new Date("01/01/2007");
+setInterval(function() {
+  var today = new Date();
+var Christmas = new Date("12-25-2012");
+var diffMs = (Christmas - today); // milliseconds between now & Christmas
+var diffDays = Math.round(diffMs / 86400000); // days
+var diffHrs = Math.round((diffMs % 86400000) / 3600000); // hours
+var diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000); // minutes
+var diffSec = Math.round(((diffMs % 86400000) % 60000) /  1000); // seconds
 
-  setInterval(function() {
-    $('#timer').html(($.now()- start) / 1000 + " Seconds");
+
+
+ 
+    $('#timer').html((Math.abs(diffDays)) + " Tage " + (Math.abs(diffHrs)) + " Stunden " + (Math.abs(diffMins)) + " Minuten " + (Math.abs(diffSec)) + " Sekunden ");
   }, 1000);
+  
 </script>
